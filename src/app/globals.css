@@ -1,33 +1,67 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* globals.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e9ecef; /* Light background for contrast */
+  color: #343a40; /* Dark text color */
+  display: flex;
+  flex-direction: column; /* Stack header, main, and footer */
+  min-height: 100vh; /* Full height of the viewport */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.header {
+  background-color: #4a90e2; /* Header color */
+  color: white;
+  padding: 20px;
+  text-align: center; /* Center header text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  flex-grow: 1; /* Allow main content to grow */
+  display: flex;
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px; /* Increased maximum width */
+  height: 600px; /* Set a fixed height for the card */
+  padding: 30px; /* Increased padding for better spacing */
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center elements horizontally */
+  overflow-y: auto; /* Enable scrolling for overflow content */
+}
+
+
+.footer {
+  padding: 10px;
+  font-size: 0.9em;
+  text-align: center;
+  color: #6c757d; /* Lighter text color for footer */
+  background-color: #f8f9fa; /* Light background for footer */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  position: relative; /* Ensure footer is positioned relative to the content */
+}
+
+/* Make footer stick to the bottom */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full height of the viewport */
+}
+
+.footer {
+  margin-top: auto; /* Push footer to the bottom */
 }
